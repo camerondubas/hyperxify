@@ -54,7 +54,7 @@ module.exports = function (file, opts) {
   }
   function end () {
     var src = Buffer.concat(bufs).toString('utf8')
-    this.push(falafel(src, { ecmaVersion: 6 }, walk).toString())
+    this.push(falafel(src, { ecmaVersion: 6, sourceType: "module"}, walk).toString())
     this.push(null)
   }
   function walk (node) {
